@@ -1,7 +1,23 @@
 import easymodbus.modbusClient
+import serial
 
-modbus_client = easymodbus.modbusClient.ModbusClient('/dev/tty.usbserial-14120')
-modbus_client.baudrate = 600
+# ser = serial.Serial('/dev/ttyUSB0')  # open serial port
+# print(ser.name)
+
+seri = serial.Serial()
+seri.baudrate = 600
+seri.port = '/dev/ttyUSB0'
+seri.parity = serial.PARITY_NONE
+seri.stopbits = 2
+seri.open()
+print(seri.is_open)
+print(seri.is_open)
+print(seri.is_open)
+
+modbus_client = easymodbus.modbusClient.ModbusClient('/dev/ttyUSB0')
+#modbus_client = easymodbus.modbusClient.ModbusClient('/dev/ttyUSB0', seri)
+
+modbus_client.is_connected()
 
 # 3600 36.6 25.5
 
@@ -10,8 +26,8 @@ modbus_client.connect()
 # System.out.println("V1 L1: " + (float)
 # modbusClient.ReadHoldingRegisters(3530, 1)[0] / 10);
 #
-#The first argument is the starting registers, the second argument is the quantity.
-register_values = modbus_client.read_holdingregisters(4000, 1)
+# The first argument is the starting registers, the second argument is the quantity.
+register_values = modbus_client.read_holdingregisters(4001, 1)
 
 print("Value of Register #1:" + str(register_values[0]))
 
