@@ -1,3 +1,5 @@
+from time import sleep
+
 import easymodbus.modbusClient
 import serial
 
@@ -16,6 +18,15 @@ seri.open()
 print(seri.is_open)
 print(seri.is_open)
 print(seri.is_open)
+
+
+print(seri.readlines())
+sleep(2)
+print(seri.readlines())
+sleep(2)
+print(seri.readlines())
+sleep(2)
+print(seri.readlines())
 
 modbus_client = easymodbus.modbusClient.ModbusClient('/dev/ttyUSB0')
 #modbus_client = easymodbus.modbusClient.ModbusClient('/dev/ttyUSB0', seri)
