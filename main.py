@@ -10,7 +10,7 @@ seri = serial.Serial()
 seri.baudrate = 600
 seri.port = '/dev/ttyUSB0'
 seri.parity = serial.PARITY_NONE
-seri.stopbits = 2
+seri.stopbits = 1
 
 if seri.isOpen():
     seri.close()
