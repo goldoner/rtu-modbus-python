@@ -5,10 +5,13 @@ import serial
 # print(ser.name)
 
 seri = serial.Serial()
-seri.baudrate = 600
+seri.baudrate = 9600
 seri.port = '/dev/ttyUSB0'
 seri.parity = serial.PARITY_NONE
 seri.stopbits = 2
+
+if seri.isOpen():
+    seri.close()
 seri.open()
 print(seri.is_open)
 print(seri.is_open)
