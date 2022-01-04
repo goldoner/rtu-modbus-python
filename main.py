@@ -8,9 +8,10 @@ import serial
 
 seri = serial.Serial()
 seri.baudrate = 9600
-seri.port = '/dev/ttyUSB0'
+seri.bytesize = 8
 seri.parity = serial.PARITY_NONE
 seri.stopbits = 2
+seri.port = '/dev/ttyUSB0'
 
 if seri.isOpen():
     seri.close()
