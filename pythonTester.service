@@ -1,0 +1,13 @@
+[Unit]
+Description = PythonModbusTestService
+After = network.target
+
+[Service]
+WorkingDirectory=/home/pi/rtu-modbus-python
+ExecStart=python3 main.py
+Type=simple
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
