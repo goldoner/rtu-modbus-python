@@ -7,10 +7,10 @@ import serial
 # print(ser.name)
 
 seri = serial.Serial()
-seri.baudrate = 9600
+seri.baudrate = 19200
 seri.bytesize = 8
 seri.parity = serial.PARITY_NONE
-seri.stopbits = 2
+seri.stopbits = 1
 seri.port = '/dev/ttyUSB0'
 
 if seri.isOpen():
