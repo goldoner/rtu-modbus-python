@@ -5,36 +5,41 @@ import serial
 
 # ser = serial.Serial('/dev/ttyUSB0')  # open serial port
 # print(ser.name)
-
-seri = serial.Serial()
-seri.baudrate = 19200
-seri.bytesize = 8
-seri.parity = serial.PARITY_NONE
-seri.stopbits = 1
-seri.port = '/dev/ttyUSB0'
-
-if seri.isOpen():
-    seri.close()
-seri.open()
-print(seri.is_open)
-print(seri.is_open)
-print(seri.is_open)
-
-
-print(seri.readlines())
-sleep(2)
-print(seri.readlines())
-sleep(2)
-print(seri.readlines())
-sleep(2)
-print(seri.readlines())
+#
+# seri = serial.Serial()
+# seri.baudrate = 9600
+# seri.bytesize = 8
+# seri.parity = serial.PARITY_NONE
+# seri.stopbits = 1
+# seri.port = '/dev/ttyUSB0'
+#
+# if seri.isOpen():
+#     seri.close()
+# seri.open()
+# print(seri.is_open)
+# print(seri.is_open)
+# print(seri.is_open)
+#
+#
+#
+# print(seri.readlines())
+# sleep(2)
+# print(seri.readlines())
+# sleep(2)
+# print(seri.readlines())
+# sleep(2)
+# print(seri.readlines())
 
 modbus_client = easymodbus.modbusClient.ModbusClient('/dev/ttyUSB0')
+
+
+modbus_client.baudrate = 9600
+modbus_client.parity = serial.PARITY_NONE
+modbus_client.stopbits = 8
+modbus_client.stopbits = 2
 #modbus_client = easymodbus.modbusClient.ModbusClient('/dev/ttyUSB0', seri)
 
 modbus_client.is_connected()
-
-# 3600 36.6 25.5
 
 modbus_client.connect()
 #
