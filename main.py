@@ -21,44 +21,47 @@ modbus_client.is_connected()
 modbus_client.connect()
 register_values = modbus_client.read_holdingregisters(4001, 1)
 
-print("Value of Register #1:" + str(register_values[0]))
+#
+# logging.info(type(modbus_client.read_holdingregisters(4001, 3)[0]))
+#
+# logging.info("Current REGISTER 1000 : " + str(
+#     easymodbus.modbusClient.convert_registers_to_float(modbus_client.read_holdingregisters(1000, 3))))
+#
+#
+# logging.info("Current REGISTER 8000 L1 : " + str(float(modbus_client.read_holdingregisters(8000, 3)[0] / 10)))
+# logging.info("Current REGISTER 8001 L2 : " + str(float(modbus_client.read_holdingregisters(8000, 3)[1] / 10)))
+# logging.info("Current REGISTER 8002 L3 : " + str(float(modbus_client.read_holdingregisters(8000, 3)[2] / 10)))
+#
+#
+# logging.info("Voltage REGISTER 8003 L1 : " + str(float(modbus_client.read_holdingregisters(8003, 3)[0] / 10)))
+# logging.info("Voltage REGISTER 8003 L2 : " + str(float(modbus_client.read_holdingregisters(8003, 3)[1] / 10)))
+# logging.info("Voltage REGISTER 8003 L3 : " + str(float(modbus_client.read_holdingregisters(8003, 3)[2] / 10)))
+#
+#
+# logging.info("Real Power SUM REGISTER 8024 : " + str(float(modbus_client.read_holdingregisters(8024, 3)[0] / 10)))
+#
+# logging.info("Real Power REGISTER 8009 L1 : " + str(float(modbus_client.read_holdingregisters(8009, 3)[0] / 10)))
+# logging.info("Real Power REGISTER 8009 L2 : " + str(float(modbus_client.read_holdingregisters(8009, 3)[1] / 10)))
+# logging.info("Real Power REGISTER 8009 L3 : " + str(float(modbus_client.read_holdingregisters(8009, 3)[2] / 10)))
+#
+#
+# logging.info("Apparent Power REGISTER 8012 L1 : " + str(float(modbus_client.read_holdingregisters(8012, 3)[0] / 10)))
+# logging.info("Apparent Power REGISTER 8012 L2 : " + str(float(modbus_client.read_holdingregisters(8012, 3)[1] / 10)))
+# logging.info("Apparent Power REGISTER 8012 L3 : " + str(float(modbus_client.read_holdingregisters(8012, 3)[2] / 10)))
+#
+#
+# logging.info("Reactive Power REGISTER 8015 L1 : " + str(float(modbus_client.read_holdingregisters(8015, 3)[0] / 10)))
+# logging.info("Reactive Power REGISTER 8015 L2 : " + str(float(modbus_client.read_holdingregisters(8015, 3)[1] / 10)))
+# logging.info("Reactive Power REGISTER 8015 L3 : " + str(float(modbus_client.read_holdingregisters(8015, 3)[2] / 10)))
+#
 
-logging.info(type(modbus_client.read_holdingregisters(4001, 3)[0]))
 
-logging.info("Current REGISTER 1000 : " + str(
-    easymodbus.modbusClient.convert_registers_to_float(modbus_client.read_holdingregisters(1000, 3))))
+logging.info("Voltage REGISTER 9100 SCALE : " + str(modbus_client.read_holdingregisters(9100, 1)[0]))
+logging.info("Voltage REGISTER 9101 SCALE : " + str(modbus_client.read_holdingregisters(9101, 1)[1]))
 
+logging.info("System Time REGISTER 3000 SCALE : " + str(modbus_client.read_holdingregisters(3000, 1)[0]))
+logging.info("AVG Time Current REGISTER 3001 SCALE : " + str(modbus_client.read_holdingregisters(3001, 6)[0]))
 
-logging.info("Current REGISTER 8000 L1 : " + str(float(modbus_client.read_holdingregisters(8000, 3)[0] / 10)))
-logging.info("Current REGISTER 8001 L2 : " + str(float(modbus_client.read_holdingregisters(8001, 3)[1] / 10)))
-logging.info("Current REGISTER 8002 L3 : " + str(float(modbus_client.read_holdingregisters(8002, 3)[2] / 10)))
-
-
-logging.info("Voltage REGISTER 8003 L1 : " + str(float(modbus_client.read_holdingregisters(8003, 3)[0] / 10)))
-logging.info("Voltage REGISTER 8003 L2 : " + str(float(modbus_client.read_holdingregisters(8003, 3)[1] / 10)))
-logging.info("Voltage REGISTER 8003 L3 : " + str(float(modbus_client.read_holdingregisters(8003, 3)[2] / 10)))
-
-
-logging.info("Real Power SUM REGISTER 8023 : " + str(float(modbus_client.read_holdingregisters(8024, 3)[0] / 10)))
-
-logging.info("Real Power REGISTER 8009 L1 : " + str(float(modbus_client.read_holdingregisters(8009, 3)[0] / 10)))
-logging.info("Real Power REGISTER 8009 L2 : " + str(float(modbus_client.read_holdingregisters(8009, 3)[1] / 10)))
-logging.info("Real Power REGISTER 8009 L3 : " + str(float(modbus_client.read_holdingregisters(8009, 3)[2] / 10)))
-
-
-logging.info("Apparent Power REGISTER 8012 L1 : " + str(float(modbus_client.read_holdingregisters(8012, 3)[0] / 10)))
-logging.info("Apparent Power REGISTER 8012 L2 : " + str(float(modbus_client.read_holdingregisters(8012, 3)[1] / 10)))
-logging.info("Apparent Power REGISTER 8012 L3 : " + str(float(modbus_client.read_holdingregisters(8012, 3)[2] / 10)))
-
-
-logging.info("Reactive Power REGISTER 8015 L1 : " + str(float(modbus_client.read_holdingregisters(8015, 3)[0] / 10)))
-logging.info("Reactive Power REGISTER 8015 L2 : " + str(float(modbus_client.read_holdingregisters(8015, 3)[1] / 10)))
-logging.info("Reactive Power REGISTER 8015 L3 : " + str(float(modbus_client.read_holdingregisters(8015, 3)[2] / 10)))
-
-
-
-logging.info("Voltage REGISTER 9100 SCALE : " + str(int(modbus_client.read_holdingregisters(9100, 1)[0])))
-logging.info("Voltage REGISTER 9101 SCALE : " + str(int(modbus_client.read_holdingregisters(9101, 1)[0])))
 
 
 
