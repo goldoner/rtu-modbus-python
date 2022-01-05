@@ -46,6 +46,13 @@ logging.info("Current REGISTER 8003 : " + str(int(modbus_client.read_holdingregi
 logging.info("REAL POWER REGISTER 8009 : " + str(modbus_client.read_holdingregisters(8009, 3)[0]))
 
 
+logging.info("FREQeNECY REGISTER 8021 : " + str(modbus_client.read_holdingregisters(8021, 3)[0]))
+
+logging.info("REAL POWER SUM REGISTER 8024 : " + str(modbus_client.read_holdingregisters(8024, 1)[0]))
+
+logging.info("REAL POWER SUM REGISTER 8028 : " + str(modbus_client.read_holdingregisters(8028, 2)[0]))
+
+
 
 
 logging.info("Current REGISTER 4000 : " + str(modbus_client.read_holdingregisters(4001, 3)[0]))
