@@ -1,3 +1,5 @@
+import encodings
+
 import easymodbus.modbusClient
 import serial
 
@@ -51,8 +53,8 @@ modbus_client.connect()
 # logging.info("Reactive Power REGISTER 8015 L1 : " + str(float(modbus_client.read_holdingregisters(8015, 3)[0] / 10)))
 # logging.info("Reactive Power REGISTER 8015 L2 : " + str(float(modbus_client.read_holdingregisters(8015, 3)[1] / 10)))
 # logging.info("Reactive Power REGISTER 8015 L3 : " + str(float(modbus_client.read_holdingregisters(8015, 3)[2] / 10)))
-#
-logging.info(bytearray(str(modbus_client.read_holdingregisters(3001, 1)[0])))
+
+logging.info(str.encode(str(modbus_client.read_holdingregisters(3001, 1)[0])))
 
 logging.info("Voltage REGISTER 9100 SCALE : " + str(modbus_client.read_holdingregisters(9100, 1)))
 logging.info("Voltage REGISTER 9101 SCALE : " + str(modbus_client.read_holdingregisters(9101, 1)))
