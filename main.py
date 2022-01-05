@@ -24,11 +24,14 @@ register_values = modbus_client.read_holdingregisters(4001, 1)
 
 print("Value of Register #1:" + str(register_values[0]))
 
+logging.info(type(modbus_client.read_holdingregisters(4001, 3)[0]))
+logging.info("Current REGISTER 4000 : " + str(modbus_client.read_holdingregisters(1000, 3)[0]))
+logging.info("Current REGISTER 4000 : " + str(int(modbus_client.read_holdingregisters(1000, 3)[0])))
+
+
 logging.info("Current REGISTER 4000 : " + str(modbus_client.read_holdingregisters(4001, 3)[0]))
 logging.info("Current REGISTER 4000 : " + str(modbus_client.read_holdingregisters(4001, 3)[1]))
 logging.info("Current REGISTER 4000 : " + str(modbus_client.read_holdingregisters(4001, 3)[2]))
-
-
 
 
 logging.info("Voltage N-L REGISTER 4003 : " + str(modbus_client.read_holdingregisters(4004, 1)[0]))
