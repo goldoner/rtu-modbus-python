@@ -40,14 +40,8 @@ logging.info("Current REGISTER 9103 SCALE : " + str(int(modbus_client.read_holdi
 
 
 logging.info("Current REGISTER 8000 : " + str(int(modbus_client.read_holdingregisters(8000, 3)[0])))
-logging.info("Current REGISTER 8001 : " + str(int(modbus_client.read_holdingregisters(8001, 3)[0])))
 
 logging.info("Current REGISTER 8003 : " + str(int(modbus_client.read_holdingregisters(8003, 3)[0])))
-logging.info("Current REGISTER 8004 : " + str(int(modbus_client.read_holdingregisters(8004, 3)[0])))
-
-logging.info("Current REGISTER 8006 : " + str(int(modbus_client.read_holdingregisters(8006, 3)[0])))
-logging.info("Current REGISTER 8007 : " + str(int(modbus_client.read_holdingregisters(8007, 3)[0])))
-
 
 logging.info("REAL POWER REGISTER 8009 : " + str(modbus_client.read_holdingregisters(8009, 3)[0]))
 
