@@ -31,6 +31,14 @@ logging.info("Current REGISTER 1000 : " + str(modbus_client.read_holdingregister
 logging.info("Current REGISTER 1000 : " + str(int(modbus_client.read_holdingregisters(1000, 3)[0])))
 
 
+logging.info("Current REGISTER 9100 SCALE : " + str(int(modbus_client.read_holdingregisters(9100, 1)[0])))
+logging.info("Current REGISTER 9101 SCALE : " + str(int(modbus_client.read_holdingregisters(9101, 1)[0])))
+
+
+logging.info("Current REGISTER 9102 SCALE : " + str(int(modbus_client.read_holdingregisters(9102, 1)[0])))
+logging.info("Current REGISTER 9103 SCALE : " + str(int(modbus_client.read_holdingregisters(9103, 1)[0])))
+
+
 logging.info("Current REGISTER 8000 : " + str(int(modbus_client.read_holdingregisters(8000, 3)[0])))
 logging.info("Current REGISTER 8001 : " + str(int(modbus_client.read_holdingregisters(8001, 3)[0])))
 
