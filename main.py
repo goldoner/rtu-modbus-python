@@ -49,6 +49,9 @@ logging.info("Current REGISTER 8006 : " + str(int(modbus_client.read_holdingregi
 logging.info("Current REGISTER 8007 : " + str(int(modbus_client.read_holdingregisters(8007, 3)[0])))
 
 
+logging.info("REAL POWER REGISTER 8009 : " + str(modbus_client.read_holdingregisters(8009, 3)[0]))
+
+
 
 
 logging.info("Current REGISTER 4000 : " + str(modbus_client.read_holdingregisters(4001, 3)[0]))
