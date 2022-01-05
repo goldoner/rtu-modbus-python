@@ -28,8 +28,6 @@ logging.info(type(modbus_client.read_holdingregisters(4001, 3)[0]))
 logging.info("Current REGISTER 1000 : " + str(
     easymodbus.modbusClient.convert_registers_to_float(modbus_client.read_holdingregisters(1000, 3))))
 
-logging.info("Current REGISTER 1000 : " + str(
-    easymodbus.modbusClient.convert_registers_to_float(modbus_client.read_holdingregisters(1000, 3)[0])))
 
 logging.info("Current REGISTER 8000 L1 : " + str(float(modbus_client.read_holdingregisters(8000, 3)[0] / 10)))
 logging.info("Current REGISTER 8001 L2 : " + str(float(modbus_client.read_holdingregisters(8001, 3)[1] / 10)))
