@@ -57,11 +57,14 @@ modbus_client.connect()
 
 # logging.info(easymodbus.modbusClient.convert_registers_to_float(modbus_client.read_holdingregisters(3000, 1)[0]))
 
-logging.info("Voltage REGISTER 9100 SCALE : " + str(modbus_client.read_holdingregisters(9100, 1)))
-logging.info("Voltage REGISTER 9101 SCALE : " + str(modbus_client.read_holdingregisters(9101, 1)))
+logging.info("REG  4000  : " + str(modbus_client.read_holdingregisters(4000, 1))[0])
 
-logging.info("System Time REGISTER 3000 SCALE : " + str(modbus_client.read_holdingregisters(3001, 1)[0]))
-logging.info("AVG Time Current REGISTER 3001 SCALE : " + str(modbus_client.read_holdingregisters(3002, 6)[0]))
+
+# logging.info("Voltage REGISTER 9100 SCALE : " + str(modbus_client.read_holdingregisters(9100, 1)))
+# logging.info("Voltage REGISTER 9101 SCALE : " + str(modbus_client.read_holdingregisters(9101, 1)))
+#
+# logging.info("System Time REGISTER 3000 SCALE : " + str(modbus_client.read_holdingregisters(3001, 1)[0]))
+# logging.info("AVG Time Current REGISTER 3001 SCALE : " + str(modbus_client.read_holdingregisters(3002, 6)[0]))
 
 # logging.info("Current REGISTER 4000 : " + str(modbus_client.read_holdingregisters(4001, 3)[1]))
 # logging.info("Current REGISTER 4000 : " + str(modbus_client.read_holdingregisters(4001, 3)[2]))
