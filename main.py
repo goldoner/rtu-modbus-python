@@ -12,10 +12,10 @@ logging.basicConfig(filename="modbusPython.log",
 
 modbus_client = easymodbus.modbusClient.ModbusClient('/dev/ttyUSB0')
 
+# 9600/8/N/2
 modbus_client.baudrate = 9600
 modbus_client.parity = serial.PARITY_NONE
-modbus_client.stopbits = 8
-modbus_client.stopbits = 2
+modbus_client.stopbits = serial.STOPBITS_TWO
 
 modbus_client.is_connected()
 
