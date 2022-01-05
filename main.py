@@ -19,8 +19,6 @@ modbus_client.stopbits = serial.STOPBITS_ONE
 modbus_client.is_connected()
 
 modbus_client.connect()
-register_values = modbus_client.read_holdingregisters(4001, 1)
-
 #
 # logging.info(type(modbus_client.read_holdingregisters(4001, 3)[0]))
 #
@@ -59,8 +57,8 @@ register_values = modbus_client.read_holdingregisters(4001, 1)
 logging.info("Voltage REGISTER 9100 SCALE : " + str(modbus_client.read_holdingregisters(9100, 1)[0]))
 logging.info("Voltage REGISTER 9101 SCALE : " + str(modbus_client.read_holdingregisters(9101, 1)[1]))
 
-logging.info("System Time REGISTER 3000 SCALE : " + str(modbus_client.read_holdingregisters(3000, 1)[0]))
-logging.info("AVG Time Current REGISTER 3001 SCALE : " + str(modbus_client.read_holdingregisters(3001, 6)[0]))
+logging.info("System Time REGISTER 3000 SCALE : " + str(modbus_client.read_holdingregisters(3001, 1)[0]))
+logging.info("AVG Time Current REGISTER 3001 SCALE : " + str(modbus_client.read_holdingregisters(3002, 6)[0]))
 
 
 
