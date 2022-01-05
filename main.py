@@ -59,8 +59,6 @@ modbus_client.connect()
 
 logging.info("REG  4000  : " + str(modbus_client.read_holdingregisters(4000, 1))[0])
 
-
-logging.info("read_discreteinputs  4000  : " + str(modbus_client.read_discreteinputs(4000, 1))[0])
 logging.info("read_inputregisters  4000  : " + str(modbus_client.read_inputregisters(4000, 1))[0])
 
 
