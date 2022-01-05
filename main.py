@@ -55,7 +55,11 @@ logging.info("REAL POWER SUM REGISTER 8028 : " + str(modbus_client.read_holdingr
 
 
 
-logging.info("Current REGISTER 4000 : " + str(modbus_client.read_holdingregisters(4001, 3)[0]))
+logging.info("REAL POWER SUM REGISTER 4024 : " + str(modbus_client.read_holdingregisters(4024, 1)[0]))
+
+
+
+
 logging.info("Current REGISTER 4000 : " + str(modbus_client.read_holdingregisters(4001, 3)[1]))
 logging.info("Current REGISTER 4000 : " + str(modbus_client.read_holdingregisters(4001, 3)[2]))
 
