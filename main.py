@@ -58,7 +58,7 @@ modbus_client.connect()
 # logging.info(easymodbus.modbusClient.convert_registers_to_float(modbus_client.read_holdingregisters(3000, 1)[0]))
 
 logging.info("REG  4000  : " + str(modbus_client.read_holdingregisters(4000, 1))[0])
-logging.info("REG  4000  : " + str(modbus_client.read_discreteinputs(4000, 1))[0])
+# logging.info("REG  4000  : " + str(modbus_client.read_discreteinputs(4000, 1))[0])
 logging.info("REG  4000  : " + str(modbus_client.read_coils(4000, 1))[0])
 
 
