@@ -5,7 +5,7 @@ import serial
 
 import logging
 
-logging.basicConfig(filename="modbusPython.log",
+logging.basicConfig(filename="logFileRegisters.log",
                     filemode='a',
                     format='%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s',
                     datefmt='%H:%M:%S',
