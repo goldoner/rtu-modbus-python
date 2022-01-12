@@ -23,7 +23,7 @@ modbus_client.connect()
 
 logging.info("TIME REGISTER 3000 L1  : " + str(float(modbus_client.read_holdingregisters(3000, 3)[0])))
 
-i = 360
+i = 0
 
 while i < 360:
     logging.info("ITERATION START")
@@ -69,6 +69,9 @@ while i < 360:
         "REACTIVE WORK INDUCTIVE REGISTER 9004  : " + str(float(modbus_client.read_holdingregisters(9004, 3)[0])))
 
     logging.info("ITERATION END")
+    logging.info(" ")
+    logging.info(" ")
+    logging.info(" ")
 
     i += 1
     time.sleep(5)
