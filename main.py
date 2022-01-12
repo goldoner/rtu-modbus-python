@@ -1,11 +1,9 @@
-import encodings
-
 import easymodbus.modbusClient
 import serial
 
 import logging
 
-logging.basicConfig(filename="logFileRegisters.log",
+logging.basicConfig(filename="logFileTestlog",
                     filemode='a',
                     format='%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s',
                     datefmt='%H:%M:%S',
@@ -22,7 +20,8 @@ modbus_client.is_connected()
 
 modbus_client.connect()
 #
-logging.info(type(modbus_client.read_holdingregisters(4001, 3)[0]))
+
+logging.info("ITERATION START")
 
 logging.info(" REGISTER 8000  : " + str(float(modbus_client.read_holdingregisters(8000, 3)[0])))
 logging.info(" REGISTER 8157  : " + str(float(modbus_client.read_holdingregisters(8157, 3)[0])))
@@ -40,6 +39,8 @@ logging.info(" REGISTER 9001  : " + str(float(modbus_client.read_holdingregister
 
 logging.info(" REGISTER 9003  : " + str(float(modbus_client.read_holdingregisters(9003, 3)[0])))
 logging.info(" REGISTER 9004  : " + str(float(modbus_client.read_holdingregisters(9004, 3)[0])))
+
+logging.info("ITERATION END")
 
 # logging.info("Current REGISTER 1000 : " + str(
 #     easymodbus.modbusClient.convert_registers_to_float(modbus_client.read_holdingregisters(1000, 3))))
