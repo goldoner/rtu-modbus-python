@@ -41,7 +41,6 @@ logging.info("CURRENT REGISTER 8160 L3  : " + str(float(modbus_client.read_holdi
 
 logging.info("REAL POWER REGISTER 8009 L1  : " + str(float(modbus_client.read_holdingregisters(8009, 3)[0])))
 logging.info("REAL POWER REGISTER 8009 L2  : " + str(float(modbus_client.read_holdingregisters(8009, 3)[1])))
-logging.info("REAL POWER REGISTER 8009 L3  : " + str(float(modbus_client.read_holdingregisters(8009, 3)[2])))
 
 logging.info("REAL POWER REGISTER 8166 L1  : " + str(float(modbus_client.read_holdingregisters(8166, 3)[0])))
 logging.info("REAL POWER REGISTER 8166 L2  : " + str(float(modbus_client.read_holdingregisters(8166, 3)[1])))
