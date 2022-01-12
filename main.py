@@ -28,27 +28,67 @@ i = 0
 while i < 360:
     logging.info("ITERATION START")
 
-    logging.info("CURRENT REGISTER 8000-8002 (L1-L3)  : " + str((modbus_client.read_holdingregisters(8000, 3))))
+    try:
+        logging.info("CURRENT REGISTER 8000-8002 (L1-L3)  : " + str((modbus_client.read_holdingregisters(8000, 3))))
+    except:
+        logging.info("REGISTER 8000-8002 (L1-L3) READ FAILED!")
 
-    logging.info("CURRENT REGISTER 8157-8159 (L1-L3)  : " + str((modbus_client.read_holdingregisters(8157, 3))))
+    try:
+        logging.info("CURRENT REGISTER 8157-8159 (L1-L3)  : " + str((modbus_client.read_holdingregisters(8157, 3))))
+    except:
+        logging.info("REGISTER 8157-8159 (L1-L3) READ FAILED!")
 
-    logging.info("VOLTAGE REGISTER 8003-8005 (L1-L3)  : " + str((modbus_client.read_holdingregisters(8003, 3))))
+    try:
+        logging.info("VOLTAGE REGISTER 8003-8005 (L1-L3)  : " + str((modbus_client.read_holdingregisters(8003, 3))))
+    except:
+        logging.info("REGISTER 8003-8005 (L1-L3) READ FAILED!")
 
-    logging.info("VOLTAGE REGISTER 8160-8162 (L1-L3)   : " + str((modbus_client.read_holdingregisters(8160, 3))))
+    try:
+        logging.info("VOLTAGE REGISTER 8160-8162 (L1-L3)   : " + str((modbus_client.read_holdingregisters(8160, 3))))
+    except:
+        logging.info("REGISTER 8160-8162 (L1-L3) READ FAILED!")
 
-    logging.info("REAL POWER REGISTER 8009-8011 (L1-L3)   : " + str((modbus_client.read_holdingregisters(8009, 3))))
+    try:
+        logging.info("REAL POWER REGISTER 8009-8011 (L1-L3)   : " + str((modbus_client.read_holdingregisters(8009, 3))))
+    except:
+        logging.info("REGISTER 8009-8011 (L1-L3) READ FAILED!")
 
-    logging.info("REAL POWER REGISTER 8166-8168 (L1-L3)   : " + str((modbus_client.read_holdingregisters(8166, 3))))
+    try:
+        logging.info("REAL POWER REGISTER 8166-8168 (L1-L3)   : " + str((modbus_client.read_holdingregisters(8166, 3))))
+    except:
+        logging.info("REGISTER 8166-8168 (L1-L3) READ FAILED!")
 
-    logging.info("REACTIVE POWER REGISTER 8015-8017 (L1-L3)   : " + str((modbus_client.read_holdingregisters(8015, 3))))
+    try:
+        logging.info(
+            "REACTIVE POWER REGISTER 8015-8017 (L1-L3)   : " + str((modbus_client.read_holdingregisters(8015, 3))))
+    except:
+        logging.info("REGISTER 8015-8017  (L1-L3) READ FAILED!")
 
-    logging.info("REACTIVE POWER REGISTER 8172-8175 (L1-L3)   : " + str((modbus_client.read_holdingregisters(8172, 3))))
+    try:
+        logging.info(
+            "REACTIVE POWER REGISTER 8172-8175 (L1-L3)   : " + str((modbus_client.read_holdingregisters(8172, 3))))
+    except:
+        logging.info("REGISTER 8172-8175 (L1-L3) READ FAILED!")
 
-    logging.info("REAL WORK CONSUMPTION REGISTER 9000  : " + str((modbus_client.read_holdingregisters(9000, 1))))
-    # logging.info("REAL WORK SUPPLY REGISTER 9001  : " + str((modbus_client.read_holdingregisters(9001, 1))))
+    try:
+        logging.info("REAL WORK CONSUMPTION REGISTER 9000  : " + str((modbus_client.read_holdingregisters(9000, 1))))
+    except:
+        logging.info("REGISTER 9000 READ FAILED!")
 
-    # logging.info("REACTIVE WORK CAPACITIVE REGISTER 9003  : " + str((modbus_client.read_holdingregisters(9003, 1))))
-    logging.info("REACTIVE WORK INDUCTIVE REGISTER 9004  : " + str((modbus_client.read_holdingregisters(9004, 1))))
+    try:
+        logging.info("REAL WORK SUPPLY REGISTER 9001  : " + str((modbus_client.read_holdingregisters(9001, 1))))
+    except:
+        logging.info("REGISTER 9001 READ FAILED!")
+
+    try:
+        logging.info("REACTIVE WORK CAPACITIVE REGISTER 9003  : " + str((modbus_client.read_holdingregisters(9003, 1))))
+    except:
+        logging.info("REGISTER 9003 READ FAILED!")
+
+    try:
+        logging.info("REACTIVE WORK INDUCTIVE REGISTER 9004  : " + str((modbus_client.read_holdingregisters(9004, 1))))
+    except:
+        logging.info("REGISTER 9004 READ FAILED!")
 
     logging.info("ITERATION END")
     logging.info(" ")
