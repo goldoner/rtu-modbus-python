@@ -47,7 +47,7 @@ while i < 360:
     logging.info("REAL WORK CONSUMPTION REGISTER 9000  : " + str((modbus_client.read_holdingregisters(9000, 1))))
     # logging.info("REAL WORK SUPPLY REGISTER 9001  : " + str((modbus_client.read_holdingregisters(9001, 1))))
 
-    logging.info("REACTIVE WORK CAPACITIVE REGISTER 9003  : " + str((modbus_client.read_holdingregisters(9003, 1))))
+    # logging.info("REACTIVE WORK CAPACITIVE REGISTER 9003  : " + str((modbus_client.read_holdingregisters(9003, 1))))
     logging.info("REACTIVE WORK INDUCTIVE REGISTER 9004  : " + str((modbus_client.read_holdingregisters(9004, 1))))
 
     logging.info("ITERATION END")
