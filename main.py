@@ -3,7 +3,7 @@ import serial
 
 import logging
 
-logging.basicConfig(filename="logFileTestlog",
+logging.basicConfig(filename="logFileTest.log",
                     filemode='a',
                     format='%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s',
                     datefmt='%H:%M:%S',
