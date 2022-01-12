@@ -21,7 +21,9 @@ modbus_client.is_connected()
 
 modbus_client.connect()
 
-i = 0
+logging.info("TIME REGISTER 3000 L1  : " + str(float(modbus_client.read_holdingregisters(3000, 3)[0])))
+
+i = 360
 
 while i < 360:
     logging.info("ITERATION START")
