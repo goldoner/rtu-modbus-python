@@ -2,6 +2,7 @@ import easymodbus.modbusClient
 import serial
 
 import logging
+import time
 
 logging.basicConfig(filename="logFileTest.log",
                     filemode='a',
@@ -19,48 +20,56 @@ modbus_client.stopbits = serial.STOPBITS_ONE
 modbus_client.is_connected()
 
 modbus_client.connect()
-#
 
-logging.info("ITERATION START")
+i = 0
 
-logging.info("CURRENT REGISTER 8000 L1  : " + str(float(modbus_client.read_holdingregisters(8000, 3)[0])))
-logging.info("CURRENT REGISTER 8000 L2  : " + str(float(modbus_client.read_holdingregisters(8000, 3)[1])))
-logging.info("CURRENT REGISTER 8000 L3  : " + str(float(modbus_client.read_holdingregisters(8000, 3)[2])))
+while i < 360:
+    logging.info("ITERATION START")
 
-logging.info("CURRENT REGISTER 8003 L1  : " + str(float(modbus_client.read_holdingregisters(8003, 3)[0])))
-logging.info("CURRENT REGISTER 8003 L2  : " + str(float(modbus_client.read_holdingregisters(8003, 3)[1])))
-logging.info("CURRENT REGISTER 8003 L3  : " + str(float(modbus_client.read_holdingregisters(8003, 3)[2])))
+    logging.info("CURRENT REGISTER 8000 L1  : " + str(float(modbus_client.read_holdingregisters(8000, 3)[0])))
+    logging.info("CURRENT REGISTER 8000 L2  : " + str(float(modbus_client.read_holdingregisters(8000, 3)[1])))
+    logging.info("CURRENT REGISTER 8000 L3  : " + str(float(modbus_client.read_holdingregisters(8000, 3)[2])))
 
-logging.info("CURRENT REGISTER 8157 L1 : " + str(float(modbus_client.read_holdingregisters(8157, 3)[0])))
-logging.info("CURRENT REGISTER 8157 L2  : " + str(float(modbus_client.read_holdingregisters(8157, 3)[1])))
-logging.info("CURRENT REGISTER 8157 L3  : " + str(float(modbus_client.read_holdingregisters(8157, 3)[2])))
+    logging.info("CURRENT REGISTER 8003 L1  : " + str(float(modbus_client.read_holdingregisters(8003, 3)[0])))
+    logging.info("CURRENT REGISTER 8003 L2  : " + str(float(modbus_client.read_holdingregisters(8003, 3)[1])))
+    logging.info("CURRENT REGISTER 8003 L3  : " + str(float(modbus_client.read_holdingregisters(8003, 3)[2])))
 
-logging.info("CURRENT REGISTER 8160 L1  : " + str(float(modbus_client.read_holdingregisters(8160, 3)[0])))
-logging.info("CURRENT REGISTER 8160 L2  : " + str(float(modbus_client.read_holdingregisters(8160, 3)[1])))
-logging.info("CURRENT REGISTER 8160 L3  : " + str(float(modbus_client.read_holdingregisters(8160, 3)[2])))
+    logging.info("CURRENT REGISTER 8157 L1 : " + str(float(modbus_client.read_holdingregisters(8157, 3)[0])))
+    logging.info("CURRENT REGISTER 8157 L2  : " + str(float(modbus_client.read_holdingregisters(8157, 3)[1])))
+    logging.info("CURRENT REGISTER 8157 L3  : " + str(float(modbus_client.read_holdingregisters(8157, 3)[2])))
 
-logging.info("REAL POWER REGISTER 8009 L1  : " + str(float(modbus_client.read_holdingregisters(8009, 3)[0])))
-logging.info("REAL POWER REGISTER 8009 L2  : " + str(float(modbus_client.read_holdingregisters(8009, 3)[1])))
+    logging.info("CURRENT REGISTER 8160 L1  : " + str(float(modbus_client.read_holdingregisters(8160, 3)[0])))
+    logging.info("CURRENT REGISTER 8160 L2  : " + str(float(modbus_client.read_holdingregisters(8160, 3)[1])))
+    logging.info("CURRENT REGISTER 8160 L3  : " + str(float(modbus_client.read_holdingregisters(8160, 3)[2])))
 
-logging.info("REAL POWER REGISTER 8166 L1  : " + str(float(modbus_client.read_holdingregisters(8166, 3)[0])))
-logging.info("REAL POWER REGISTER 8166 L2  : " + str(float(modbus_client.read_holdingregisters(8166, 3)[1])))
-logging.info("REAL POWER REGISTER 8166 L3  : " + str(float(modbus_client.read_holdingregisters(8166, 3)[2])))
+    logging.info("REAL POWER REGISTER 8009 L1  : " + str(float(modbus_client.read_holdingregisters(8009, 3)[0])))
+    logging.info("REAL POWER REGISTER 8009 L2  : " + str(float(modbus_client.read_holdingregisters(8009, 3)[1])))
 
-logging.info("REACTIVE POWER REGISTER 8015 L1  : " + str(float(modbus_client.read_holdingregisters(8015, 3)[0])))
-logging.info("REACTIVE POWER REGISTER 8015 L2  : " + str(float(modbus_client.read_holdingregisters(8015, 3)[1])))
-logging.info("REACTIVE POWER REGISTER 8015 L3  : " + str(float(modbus_client.read_holdingregisters(8015, 3)[2])))
+    logging.info("REAL POWER REGISTER 8166 L1  : " + str(float(modbus_client.read_holdingregisters(8166, 3)[0])))
+    logging.info("REAL POWER REGISTER 8166 L2  : " + str(float(modbus_client.read_holdingregisters(8166, 3)[1])))
+    logging.info("REAL POWER REGISTER 8166 L3  : " + str(float(modbus_client.read_holdingregisters(8166, 3)[2])))
 
-logging.info("REACTIVE POWER REGISTER 8172 L1  : " + str(float(modbus_client.read_holdingregisters(8172, 3)[0])))
-logging.info("REACTIVE POWER REGISTER 8172 L2  : " + str(float(modbus_client.read_holdingregisters(8172, 3)[1])))
-logging.info("REACTIVE POWER REGISTER 8172 L3  : " + str(float(modbus_client.read_holdingregisters(8172, 3)[2])))
+    logging.info("REACTIVE POWER REGISTER 8015 L1  : " + str(float(modbus_client.read_holdingregisters(8015, 3)[0])))
+    logging.info("REACTIVE POWER REGISTER 8015 L2  : " + str(float(modbus_client.read_holdingregisters(8015, 3)[1])))
+    logging.info("REACTIVE POWER REGISTER 8015 L3  : " + str(float(modbus_client.read_holdingregisters(8015, 3)[2])))
 
-logging.info("REAL WORK CONSUMPTION REGISTER 9000  : " + str(float(modbus_client.read_holdingregisters(9000, 3)[0])))
-logging.info("REAL WORK SUPPLY REGISTER 9001  : " + str(float(modbus_client.read_holdingregisters(9001, 3)[0])))
+    logging.info("REACTIVE POWER REGISTER 8172 L1  : " + str(float(modbus_client.read_holdingregisters(8172, 3)[0])))
+    logging.info("REACTIVE POWER REGISTER 8172 L2  : " + str(float(modbus_client.read_holdingregisters(8172, 3)[1])))
+    logging.info("REACTIVE POWER REGISTER 8172 L3  : " + str(float(modbus_client.read_holdingregisters(8172, 3)[2])))
 
-logging.info("REACTIVE WORK CAPACITIVE REGISTER 9003  : " + str(float(modbus_client.read_holdingregisters(9003, 3)[0])))
-logging.info("REACTIVE WORK INDUCTIVE REGISTER 9004  : " + str(float(modbus_client.read_holdingregisters(9004, 3)[0])))
+    logging.info(
+        "REAL WORK CONSUMPTION REGISTER 9000  : " + str(float(modbus_client.read_holdingregisters(9000, 3)[0])))
+    logging.info("REAL WORK SUPPLY REGISTER 9001  : " + str(float(modbus_client.read_holdingregisters(9001, 3)[0])))
 
-logging.info("ITERATION END")
+    logging.info(
+        "REACTIVE WORK CAPACITIVE REGISTER 9003  : " + str(float(modbus_client.read_holdingregisters(9003, 3)[0])))
+    logging.info(
+        "REACTIVE WORK INDUCTIVE REGISTER 9004  : " + str(float(modbus_client.read_holdingregisters(9004, 3)[0])))
+
+    logging.info("ITERATION END")
+
+    i += 1
+    time.sleep(5)
 
 # logging.info("Current REGISTER 1000 : " + str(
 #     easymodbus.modbusClient.convert_registers_to_float(modbus_client.read_holdingregisters(1000, 3))))
