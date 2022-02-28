@@ -30,6 +30,7 @@ while i < 360:
 
     try:
         logging.info("CURRENT REGISTER 8000-8002 (L1-L3)  : " + str((modbus_client.read_holdingregisters(8000, 3))))
+        print(str((modbus_client.read_holdingregisters(8000, 3))))
     except:
         logging.info("REGISTER 8000-8002 (L1-L3) READ FAILED!")
 
