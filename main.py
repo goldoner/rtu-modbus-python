@@ -11,6 +11,7 @@ logging.basicConfig(filename="logFileTest.log",
                     level=logging.INFO)
 
 modbus_client = easymodbus.modbusClient.ModbusClient('/dev/ttyUSB0')
+# modbus_client = easymodbus.modbusClient.ModbusClient('/dev/tty.usbserial-AB0NN63U')
 
 # 9600/8/N/2
 modbus_client.baudrate = 9600
@@ -27,6 +28,7 @@ i = 0
 
 while i < 360:
     logging.info("ITERATION START")
+    print("Start")
 
     try:
         logging.info("CURRENT REGISTER 8000-8002 (L1-L3)  : " + str((modbus_client.read_holdingregisters(8000, 3))))
